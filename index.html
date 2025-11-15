@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrazyMoves - Chess & Football Puzzles</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CRAZY<span class="highlight">MOVES</span></h1>
+        </header>
+
+        <main id="puzzleSection">
+            <div class="puzzle-container">
+                <h2 id="puzzleTitle">Loading...</h2>
+                <div id="myBoard" class="chess-board"></div>
+                <div class="controls">
+                    <button id="showAnswerBtn" class="btn btn-primary">Show Answer</button>
+                    <button id="nextPuzzleBtn" class="btn btn-success" style="display: none;">Next Puzzle</button>
+                </div>
+                <div id="answerSection" class="answer-section" style="display: none;">
+                    <h3>Answer:</h3>
+                    <p id="answerText"></p>
+                </div>
+            </div>
+        </main>
+
+        <div id="completionSection" style="display: none;">
+            <div class="completion-container">
+                <h2>Congratulations!</h2>
+                <p>You've completed all chess puzzles!</p>
+                <button id="unlockFootballBtn" class="btn btn-unlock">Unlock Football Puzzles</button>
+            </div>
+        </div>
+
+        <div id="footballSection" style="display: none;">
+            <div class="puzzle-container">
+                <h2 id="footballTitle">Loading...</h2>
+                <div class="football-image-container">
+                    <img id="footballImage" src="" alt="Football Puzzle">
+                </div>
+                <div class="controls">
+                    <button id="showFootballAnswerBtn" class="btn btn-primary">Show Answer</button>
+                    <button id="nextFootballPuzzleBtn" class="btn btn-success" style="display: none;">Next Puzzle</button>
+                </div>
+                <div id="footballAnswerSection" class="answer-section" style="display: none;">
+                    <h3>Answer:</h3>
+                    <p id="footballAnswerText"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="progress-footer">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressBar"></div>
+        </div>
+        <p class="progress-text" id="progressText">Puzzle 1 of 10</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
