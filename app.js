@@ -1,35 +1,48 @@
 // Sample chess puzzles data
 const chessPuzzles = [
     {
+        white: ["Ka1", "Pa2", "Pa3", "Ra4"],
+        black: ["Qc3", "Rh7", "Bf7", "Pa7", "Pb7", "Pc7", "Kb8"],
+        title: "Wo...run!",
+        answer: "Kb1",
+        toMove: "white"
+    },
+    {
         white: ["Kb1", "Pb2", "Pc3"],
         black: ["Qb5", "Bf6"],
         title: "No way!",
-        answer: "B x c3"
+        answer: "B x c3",
+        toMove: "black"
     },
     {
         white: ["Kb1"],
         black: ["Rc2", "Kb8", "Bc3", "Bb3", "Ne3"],
         title: "How is it possible?",
-        answer: "Ba2#"
+        answer: "Ba2#",
+        toMove: "black"
     },
     {
         white: ["Kg1", "Pf2", "Pg2", "Ph2", "Rb1", "Qc2"],
         black: ["Pc7", "Pb7", "Pa7", "Kb8", "Qf8", "Nc6"],
         title: "What on earth!",
-        answer: "Q x c6"
+        answer: "Q x c6",
+        toMove: "white"
     },
     {
         white: ["Kb1", "Qd2", "Rd1"],
         black: ["Pc7", "Pb7", "Pa7", "Kb8", "Rh8"],
         title: "Oh my golly!",
-        answer: "Qd8+"
+        answer: "Qd8+",
+        toMove: "white"
     },
     {
         white: ["Ra1", "Pa2", "Rd1", "Pe3", "Pf2", "Kf1", "Nd5"],
         black: ["Kd8", "Pe7", "Pf7", "Pg7", "Qg4"],
         title: "Cheeses!",
-        answer: "Nf6+"
+        answer: "Nf6+",
+        toMove: "white"
     },
+
 ];
 
 let currentPuzzleIndex = 0;
@@ -141,6 +154,16 @@ function loadPuzzle(index) {
     document.getElementById('showAnswerBtn').style.display = 'inline-block';
     document.getElementById('nextPuzzleBtn').style.display = 'none';
 
+    // Update turn indicator
+    const turnIndicator = document.getElementById('turnIndicator');
+    if (puzzle.toMove === 'white') {
+        turnIndicator.textContent = 'White';
+        turnIndicator.className = 'turn-indicator turn-white';
+    } else {
+        turnIndicator.textContent = 'Black';
+        turnIndicator.className = 'turn-indicator turn-black';
+    }
+
     initBoard(fen);
     updateProgress();
 }
@@ -214,6 +237,11 @@ const footballPuzzles = [
         image: "images/football4.png",
         title: "Ball Control Challenge",
         answer: "Dribble towards your opponent's goal (the one that they are defending) and then pass to number 70."
+    },
+    {
+        image: "images/football5.jpg",
+        title: "What can you do?",
+        answer: "Mark player 70."
     }
 ];
 
